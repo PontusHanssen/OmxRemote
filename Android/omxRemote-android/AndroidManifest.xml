@@ -32,6 +32,10 @@
             android:name="org.dyndns.stonehammer.pontus.OmxRemote.Settings"
             android:label="@string/title_activity_settings" >
         </activity>
+        <activity
+            android:name="org.dyndns.stonehammer.pontus.OmxRemote.Filemanager"
+            android:label="@string/title_activity_filemanager" >
+        </activity>
     </application>
 
 </manifest>

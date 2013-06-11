@@ -1,13 +1,20 @@
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 public class server implements Runnable {
 
 	Socket clientSocket;
+	String folder_Setting;
 
 	public server(Socket socket) {
 		this.clientSocket = socket;
@@ -76,10 +83,32 @@ public class server implements Runnable {
 					control = "-";
 				} else if (recv.equals("quit")) {
 					control = "q";
+				} else if (recv.startsWith("list")) {
+					control = "";
+					folder_Setting = recv.replaceFirst("list ", "");
+					File folder = new File(folder_Setting);
+					System.out.println(folder_Setting);
+					File[] listFiles = folder.listFiles();
+					List<String> files = new ArrayList<String>();
+					for (File file : listFiles) {
+						if (file.isFile()) {
+							files.add(file.getName());
+						}
+					}
+					Collections.sort(files);
+					ObjectOutputStream oos = new ObjectOutputStream(
+							clientSocket.getOutputStream());
+					oos.writeObject(files);
+					//oos.close();
+				} else if (recv.startsWith("play")) {
+					Process p = Runtime.getRuntime().exec(
+							"./omx_control.sh " + folder_Setting + control);
+					control = recv;
 				} else {
 					control = "";
 				}
 				try {
+					System.out.println(control);
 					Process p = Runtime.getRuntime().exec(
 							"./omx_control.sh " + control);
 				} catch (IOException e) {
@@ -101,4 +130,3 @@ public class server implements Runnable {
 	}
 
 }
-

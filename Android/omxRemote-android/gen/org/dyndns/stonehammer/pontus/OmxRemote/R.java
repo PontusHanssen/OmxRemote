@@ -36,58 +36,66 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f0b000e;
-        public static final int button1=0x7f0b000c;
-        public static final int conn=0x7f0b0007;
-        public static final int host=0x7f0b000a;
-        public static final int minus10m=0x7f0b0003;
-        public static final int minus30s=0x7f0b0001;
-        public static final int pause=0x7f0b0000;
-        public static final int plus10m=0x7f0b0004;
-        public static final int plus30s=0x7f0b0002;
-        public static final int port=0x7f0b000d;
-        public static final int settings=0x7f0b0008;
-        public static final int textView1=0x7f0b0009;
-        public static final int textView2=0x7f0b000b;
-        public static final int volDown=0x7f0b0006;
-        public static final int volUp=0x7f0b0005;
+        public static final int action_settings=0x7f0b0013;
+        public static final int button1=0x7f0b0011;
+        public static final int conn=0x7f0b0008;
+        public static final int filemanager=0x7f0b0009;
+        public static final int folder=0x7f0b0012;
+        public static final int host=0x7f0b000d;
+        public static final int listView1=0x7f0b0000;
+        public static final int minus10m=0x7f0b0004;
+        public static final int minus30s=0x7f0b0002;
+        public static final int pause=0x7f0b0001;
+        public static final int plus10m=0x7f0b0005;
+        public static final int plus30s=0x7f0b0003;
+        public static final int port=0x7f0b000f;
+        public static final int settings=0x7f0b000a;
+        public static final int status=0x7f0b000b;
+        public static final int textView1=0x7f0b000c;
+        public static final int textView2=0x7f0b000e;
+        public static final int textView3=0x7f0b0010;
+        public static final int volDown=0x7f0b0007;
+        public static final int volUp=0x7f0b0006;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
-        public static final int activity_settings=0x7f030001;
+        public static final int activity_filemanager=0x7f030000;
+        public static final int activity_main=0x7f030001;
+        public static final int activity_settings=0x7f030002;
     }
     public static final class menu {
-        public static final int main=0x7f0a0000;
-        public static final int settings=0x7f0a0001;
+        public static final int filemanager=0x7f0a0000;
+        public static final int main=0x7f0a0001;
+        public static final int settings=0x7f0a0002;
     }
     public static final class string {
-        public static final int Host=0x7f060012;
-        public static final int Port=0x7f060013;
+        public static final int Host=0x7f060013;
+        public static final int Port=0x7f060014;
         public static final int action_settings=0x7f060001;
         public static final int app_name=0x7f060000;
         public static final int hello_world=0x7f060002;
-        public static final int pref_default_display_name=0x7f060008;
-        public static final int pref_description_social_recommendations=0x7f060006;
+        public static final int pref_default_display_name=0x7f060009;
+        public static final int pref_description_social_recommendations=0x7f060007;
         /**  Example settings for Data & Sync 
          */
-        public static final int pref_header_data_sync=0x7f06000a;
+        public static final int pref_header_data_sync=0x7f06000b;
         /**  Strings related to Settings 
  Example General settings 
          */
-        public static final int pref_header_general=0x7f060004;
+        public static final int pref_header_general=0x7f060005;
         /**  Example settings for Notifications 
          */
-        public static final int pref_header_notifications=0x7f06000d;
-        public static final int pref_ringtone_silent=0x7f060010;
-        public static final int pref_title_add_friends_to_messages=0x7f060009;
-        public static final int pref_title_display_name=0x7f060007;
-        public static final int pref_title_new_message_notifications=0x7f06000e;
-        public static final int pref_title_ringtone=0x7f06000f;
-        public static final int pref_title_social_recommendations=0x7f060005;
-        public static final int pref_title_sync_frequency=0x7f06000b;
-        public static final int pref_title_system_sync_settings=0x7f06000c;
-        public static final int pref_title_vibrate=0x7f060011;
-        public static final int title_activity_settings=0x7f060003;
+        public static final int pref_header_notifications=0x7f06000e;
+        public static final int pref_ringtone_silent=0x7f060011;
+        public static final int pref_title_add_friends_to_messages=0x7f06000a;
+        public static final int pref_title_display_name=0x7f060008;
+        public static final int pref_title_new_message_notifications=0x7f06000f;
+        public static final int pref_title_ringtone=0x7f060010;
+        public static final int pref_title_social_recommendations=0x7f060006;
+        public static final int pref_title_sync_frequency=0x7f06000c;
+        public static final int pref_title_system_sync_settings=0x7f06000d;
+        public static final int pref_title_vibrate=0x7f060012;
+        public static final int title_activity_filemanager=0x7f060003;
+        public static final int title_activity_settings=0x7f060004;
     }
     public static final class style {
         /** 

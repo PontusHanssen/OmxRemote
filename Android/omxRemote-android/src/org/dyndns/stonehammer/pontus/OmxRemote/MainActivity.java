@@ -12,12 +12,14 @@ import android.content.res.AssetManager;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
-	public Client client;
+	public static Client client;
 	public String host;
 	public int port;
 	public final static String PREFS_NAME="Settings_file";
+	TextView tv;
 
 
 	@Override
@@ -25,6 +27,8 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		client = new Client();
+		tv = (TextView)findViewById(R.id.status);
+		tv.setText("Not connected");
 	}
 	
 	public void changeSettings(View view) {
@@ -43,6 +47,7 @@ public class MainActivity extends Activity {
 				client.disconnect();
 				Button but = (Button)findViewById(R.id.conn);
 				if(!client.isConnected()) {
+					tv.setText("Not connected.");
 					but.setText("Connect");
 					but.setBackgroundResource(R.color.Green);
 				}
@@ -52,6 +57,7 @@ public class MainActivity extends Activity {
 				client.connect(host, port);
 				Button but = (Button)findViewById(R.id.conn);
 				if(client.isConnected()) {
+					tv.setText("Connected: " + host + ":" + port);
 					but.setText("Disconnect");
 					but.setBackgroundResource(R.color.Red);
 				}
@@ -88,6 +94,11 @@ public class MainActivity extends Activity {
 		SharedPreferences sharedPrefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
 		host = sharedPrefs.getString("Host", "0.0.0.0");
 		port = sharedPrefs.getInt("Port", 0);
+	}
+	
+	public void filemanager(View view) {
+		Intent i = new Intent(this, Filemanager.class);
+		startActivity(i);
 	}
 
 	@Override

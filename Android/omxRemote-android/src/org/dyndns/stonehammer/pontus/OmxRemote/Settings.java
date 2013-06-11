@@ -15,7 +15,7 @@ import android.view.View;
 import android.widget.EditText;
 
 public class Settings extends Activity {
-	EditText host, port;
+	EditText host, port, folder;
 	public final static String PREFS_NAME="Settings_file";
 	
 
@@ -26,15 +26,18 @@ public class Settings extends Activity {
 	
 		host = (EditText)findViewById(R.id.host);
 		port = (EditText)findViewById(R.id.port);
+		folder = (EditText)findViewById(R.id.folder);
 		SharedPreferences sharedPrefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
 		host.setText(sharedPrefs.getString("Host", "0.0.0.0"));
 		port.setText(String.valueOf(sharedPrefs.getInt("Port", 8080)));
+		folder.setText(sharedPrefs.getString("Folder", "/mnt/temp/"));
 	}
 	public void save(View view) {
 		SharedPreferences sharedPrefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
 		SharedPreferences.Editor editor = sharedPrefs.edit();
 		editor.putString("Host", ((EditText)findViewById(R.id.host)).getText().toString());
 		editor.putInt("Port", Integer.parseInt(((EditText)findViewById(R.id.port)).getText().toString()));
+		editor.putString("Folder", ((EditText)findViewById(R.id.folder)).getText().toString());
 		editor.commit();
 		finish();
 	}

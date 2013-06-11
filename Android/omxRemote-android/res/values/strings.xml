@@ -9,6 +9,6 @@
     <color name="Green">#53e512</color>
     <color name="Red">#e00c0c</color>
 
-
+    <string name="title_activity_filemanager">Filemanager</string>
 
 </resources>

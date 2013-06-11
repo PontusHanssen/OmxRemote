@@ -91,13 +91,33 @@
         android:textColor="@color/BackgroundColor" />
 
     <ImageButton
-        android:id="@+id/settings"
+        android:id="@+id/filemanager"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="27dp"
+        android:layout_marginTop="34dp"
+        android:layout_toRightOf="@+id/volUp"
+        android:onClick="filemanager"
+        android:src="@android:drawable/ic_menu_slideshow" />
+
+    <ImageButton
+        android:id="@+id/settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/filemanager"
+        android:layout_toLeftOf="@+id/pause"
         android:onClick="changeSettings"
         android:src="@android:drawable/ic_menu_preferences" />
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/plus10m"
+        android:gravity="center_horizontal"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/White" />
 
 </RelativeLayout>
