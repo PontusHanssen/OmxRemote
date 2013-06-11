@@ -101,9 +101,10 @@ public class server implements Runnable {
 					oos.writeObject(files);
 					//oos.close();
 				} else if (recv.startsWith("play")) {
+					control = recv.replace("play ", "");
 					Process p = Runtime.getRuntime().exec(
-							"./omx_control.sh " + folder_Setting + control);
-					control = recv;
+							"./omx_control.sh play " + folder_Setting + control);
+					control = "";
 				} else {
 					control = "";
 				}
